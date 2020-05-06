@@ -25,8 +25,26 @@
                   </div>
                 </div>
             </Header>
-            <Content>
-                <List item-layout="vertical" class="article-list">
+            <Content class="content">
+                <div class="notice">
+                  <p class="notice-content">
+                    <Icon type="ios-paper-plane" />
+                    Done is better than perfect.
+                  </p>
+                </div>
+                <List class="project-list" :split="false">
+                  <template slot="header">
+                    <h2 class="list-header">我的项目</h2>
+                  </template>
+                  <ListItem class="project-wrap" v-for="item in projectList" :key="item.title">
+                      <div class="mask">{{item.description}}</div>
+                      <div class="title">{{item.title}}</div>
+                  </ListItem>
+                </List>
+                <List item-layout="vertical" class="article-list" :split="false">
+                    <template slot="header">
+                      <h2 class="list-header">我的文章</h2>
+                    </template>
                     <ListItem v-for="item in data" :key="item.title">
                         <ListItemMeta :avatar="item.avatar" :title="item.title" :description="item.description" />
                         {{ item.content }}
@@ -56,6 +74,44 @@
 export default {
   data () {
     return {
+      projectList: [
+        {
+          title: 'snack-vendor',
+          description: '零食商城WebApp',
+          img_url: '',
+          link: ''
+        },
+        {
+          title: 'elm',
+          description: '仿饿了么App商家页面',
+          img_url: '',
+          link: ''
+        },
+        {
+          title: 'elm-manage',
+          description: '基于Element-UI的后台管理系统',
+          img_url: '',
+          link: ''
+        },
+        {
+          title: 'vue-music',
+          description: '移动端音乐WebApp',
+          img_url: '',
+          link: ''
+        },
+        {
+          title: 'todo-list',
+          description: '基于vue2.0的TodoList',
+          img_url: '',
+          link: ''
+        },
+        {
+          title: 'ls-ui',
+          description: '我的UI样式库',
+          img_url: '',
+          link: ''
+        }
+      ],
       data: [
         {
           title: 'This is title 1',
@@ -96,8 +152,8 @@ export default {
     .bg-wrap
       width 100%
       height 550px
-      background url('../../../public/images/bg2.jpg') no-repeat center center
-      background-size cover
+      background url('../../../public/images/bg.jpg') no-repeat center top
+      background-size 100%
       background-attachment fixed
     .slant-left
       background: #fff
@@ -143,15 +199,78 @@ export default {
         font-size 16px
         color #333
         padding 0 14px
-  .article-list
+  .content
     max-width 800px
     min-height 500px
     background rgba(0, 0, 0, 0)
     margin 0 auto 50px auto
+    .notice
+      position relative
+      padding 24px 30px
+      margin 60px 0
+      background #fbfbfb
+      border-radius 4px
+      .notice-content
+        font-size 16px
+        color #505050
+        letter-spacing 1px
+        font-family $font-family-q
+      .ivu-icon-ios-paper-plane
+        margin-right 10px
+        font-size 18px
+        color $color-theme
+    .project-list
+      margin-bottom 60px
+      .project-wrap
+        position relative
+        display inline-block
+        width 32%
+        height 160px
+        line-height 160px
+        background #e5e5e5
+        margin-left 2%
+        margin-top 10px
+        padding 0
+        border-radius 4px
+      .project-wrap:nth-of-type(3n+1)
+        margin-left 0
+      .project-wrap:hover
+        .mask
+          opacity 1
+        .title
+          opacity 0
+      .mask, .title
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 160px
+        line-height 160px
+        text-align center
+        border-radius 4px
+        letter-spacing 1px
+        cursor pointer
+      .mask
+        font-size 16px
+        color #fff
+        background $color-theme
+        opacity 0
+        transition opacity .4s ease-out
+      .title
+        font-size 20px
+        color #333
+        background $color-gray
+        opacity 1
+        transition opacity .4s ease-out
+    .list-header
+      font-size 16px
+      font-weight 400
+      padding-bottom 15px
+      border-bottom 1px dashed $color-line
   .layout-footer-center
-    color: #9c9c9c;
+    color: #9c9c9c
     text-align: center
-    font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif
+    font-family: $font-family-q
   .ivu-menu-dark, .ivu-layout
     background rgba(0, 0, 0, 0)
 </style>
