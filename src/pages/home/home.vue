@@ -5,10 +5,10 @@
                 <div class="bg-wrap">
                   <Menu mode="horizontal" theme="dark" active-name="1">
                       <div class="layout-nav">
-                          <MenuItem name="1">
+                          <MenuItem name="1" to="/">
                               首页
                           </MenuItem>
-                          <MenuItem name="2">
+                          <MenuItem name="2" to="About">
                               关于
                           </MenuItem>
                       </div>
@@ -140,9 +140,7 @@ export default {
 <style lang="stylus" scoped>
 @import "~assets/stylus/index"
 .layout
-  border 1px solid #d7dde4
   position relative
-  border-radius 4px
   overflow hidden
   .header
     position relative
@@ -155,7 +153,7 @@ export default {
       background url('../../../public/images/bg.jpg') no-repeat center top
       background-size 100%
       background-attachment fixed
-    .slant-left
+    .slant-left, .slant-right
       background: #fff
       width: 101%
       position: absolute
@@ -164,12 +162,7 @@ export default {
       height: 200px
       transform: rotate(6deg)
     .slant-right
-      background: #fff
-      width: 101%
-      position: absolute
-      bottom: -80px
       left: 48%
-      height: 200px
       transform: rotate(-6deg)
     .user-box
       position relative
@@ -196,13 +189,16 @@ export default {
       top 0
       right 60px
       .ivu-menu-item
-        font-size 16px
-        color #333
-        padding 0 14px
+        font-size: 14px
+        background: rgba(255,255,255,.1)
+        height: 34px
+        line-height: 34px
+        margin-top: 14px
+        margin-left: 16px
+        border-radius: 2px
   .content
     max-width 800px
-    min-height 500px
-    background rgba(0, 0, 0, 0)
+    min-height 100vh
     margin 0 auto 50px auto
     .notice
       position relative
