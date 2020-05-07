@@ -19,7 +19,7 @@
                   <ul class="list">
                     <li>Name : SaSa</li>
                     <li>Age : 24</li>
-                    <li>Gender : </li>
+                    <li>Gender : 女</li>
                     <li>Birthday : 1995-08-25</li>
                     <li>Profession : web前端工程师</li>
                     <li>Hobby : 阅读、跑步、音乐</li>
@@ -36,16 +36,16 @@
                   <p slot="title"><Icon type="md-pricetags" />Learning</p>
                   <Steps direction="vertical" size="small">
                     <Step status="finish">
-                      <span slot="title">前端基础</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">前端基础</span>
+                      <ul class="list" slot="content">
                         <li>HTML/HTML5、CSS/CSS3、JavaScript、ES6/7、jQuery、BootStrap</li>
                         <li>CSS预编译：Less、Sass、Stylus</li>
                         <li>移动基础：Flex布局</li>
                       </ul>
                     </Step>
                     <Step status="process">
-                      <span slot="title">前端进阶</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">前端进阶</span>
+                      <ul class="list" slot="content">
                         <li>Vue.js、React.js、Node.js、小程序、TypeScript</li>
                         <li>HTTP</li>
                         <li>构建工具：Webpack</li>
@@ -54,8 +54,8 @@
                       </ul>
                     </Step>
                     <Step status="process">
-                      <span slot="title">框架</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">框架</span>
+                      <ul class="list" slot="content">
                         <li>Node相关：Express、Koa</li>
                         <li>React相关：Flux、Redux</li>
                         <li>UI框架：Element-UI、View-UI、Cube-UI</li>
@@ -63,8 +63,8 @@
                       </ul>
                     </Step>
                     <Step status="process">
-                      <span slot="title">大前端/跨平台</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">大前端/跨平台</span>
+                      <ul class="list" slot="content">
                         <li>H5+原生：微信小程序</li>
                         <li>JavaScript开发+原生渲染：React Native、Weex</li>
                         <li>自绘UI+原生：Flutter</li>
@@ -72,16 +72,16 @@
                       </ul>
                     </Step>
                     <Step status="process">
-                      <span slot="title">服务器端</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">服务器端</span>
+                      <ul class="list" slot="content">
                         <li>PHP / Python / Java</li>
                         <li>Linux、Nginx</li>
                         <li>MySQL、MongoDB</li>
                       </ul>
                     </Step>
                     <Step status="process">
-                      <span slot="title">算法与数据结构</span>
-                      <ul slot="content">
+                      <span class="title" slot="title">算法与数据结构</span>
+                      <ul class="list" slot="content">
                         <li>数组、栈、队列、树</li>
                       </ul>
                     </Step>
@@ -141,11 +141,18 @@ export default {
       width 800px
       .list li
         margin 6px 0
+        color $color-font
+        font-size 14px
         font-family $font-family-q
       >>>.ivu-steps .ivu-steps-head
         background rgba(255,255,255,0)
       >>>.ivu-steps .ivu-steps-title
         background rgba(255,255,255,0)
+    .skill-wrap
+      >>>.ivu-card-body
+        padding 30px 16px
+      .title
+        font-size 14px
   .ivu-layout
     background #fff
   .layout-footer-center
