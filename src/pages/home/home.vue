@@ -66,6 +66,7 @@
                 </List>
             </Content>
             <Footer class="layout-footer-center">Copyright &copy; 2020 by sasa</Footer>
+            <BackTop></BackTop>
         </Layout>
     </div>
 </template>

@@ -18,9 +18,6 @@
                   <p slot="title"><Icon type="md-pricetags" />Introduction</p>
                   <ul class="list">
                     <li>Name : SaSa</li>
-                    <li>Age : 24</li>
-                    <li>Gender : 女</li>
-                    <li>Birthday : 1995-08-25</li>
                     <li>Profession : web前端工程师</li>
                     <li>Hobby : 阅读、跑步、音乐</li>
                   </ul>
@@ -28,8 +25,8 @@
               <Card class="contact-wrap" :bordered="false">
                   <p slot="title"><Icon type="md-pricetags" />Contact</p>
                   <ul class="list">
-                    <li>Email : 1007892941@qq.com</li>
-                    <li>Github : <a href="https://github.com/hahasha" target="_blank">https://github.com/hahasha</a></li>
+                    <li><Icon type="md-mail" /> : 1007892941@qq.com</li>
+                    <li><Icon type="logo-github" /> : <a href="https://github.com/hahasha" target="_blank">https://github.com/hahasha</a></li>
                   </ul>
               </Card>
               <Card class="skill-wrap" :bordered="false">
@@ -87,8 +84,17 @@
                     </Step>
                   </Steps>
               </Card>
+              <Card class="thinking-wrap" :bordered="false">
+                  <p slot="title"><Icon type="md-pricetags" />Thinking</p>
+                  <p class="thinking">
+                    这两年来一直在学新东西，但是面对体系庞杂且高速发展的前端技术，还是远远远远不够。阮一峰老师说过我有时也感到疲倦烦躁。
+                    但是，每当看到它们带来的生产力的飞跃，让你一个人快速搞定前后端的全部开发时，就觉得这终究还是一条正确的道路。
+                    所以，还是少些浮躁，慢慢来比较快。
+                  </p>
+              </Card>
             </Content>
             <Footer class="layout-footer-center">Copyright &copy; 2020 by sasa</Footer>
+            <BackTop></BackTop>
         </Layout>
     </div>
 </template>
@@ -153,6 +159,10 @@ export default {
         padding 30px 16px
       .title
         font-size 14px
+    .thinking-wrap .thinking
+      line-height 24px
+      color $color-font
+      font-family $font-family-q
   .ivu-layout
     background #fff
   .layout-footer-center
